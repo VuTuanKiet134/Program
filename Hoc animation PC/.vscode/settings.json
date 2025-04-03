@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Hoc animation.sln"
+    "dotnet.defaultSolution": "Hoc animation PC.sln"
 }
