@@ -33,7 +33,7 @@ public class Grid : MonoBehaviour
 
         for(var row = 0; row < rows; ++row)
         {
-            for(var column = 0; column < columns; ++columns)
+            for(var column = 0; column < columns; ++column)
             {
                 _gridSquare.Add(Instantiate(gridSquare) as GameObject);
                 _gridSquare[_gridSquare.Count - 1].transform.SetParent(this.transform);
@@ -63,7 +63,7 @@ public class Grid : MonoBehaviour
             }
 
             var pos_x_offset = _offset.x * column_number + (square_gap_number.x * squaresGap);
-            var pos_y_offset = _offset.y * column_number + (square_gap_number.y * squaresGap);
+            var pos_y_offset = _offset.y * row_number + (square_gap_number.y * squaresGap);
             if(column_number > 0 && column_number % 3 == 0)
             {
                 square_gap_number.x++;
