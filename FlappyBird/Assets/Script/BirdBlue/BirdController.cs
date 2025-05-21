@@ -11,7 +11,7 @@ public class BirdController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.simulated = false; // Ngăn vật lý hoạt động trước khi bắt đầu
+         rb.simulated = false; // Ngăn vật lý hoạt động trước khi bắt đầu
     }
 
     void Update()
