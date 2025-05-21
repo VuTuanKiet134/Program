@@ -7,6 +7,9 @@ public class PipeMove : MonoBehaviour
 
     void Update()
     {
+        // Chỉ hoạt động khi game bắt đầu
+        if (!GameManager.Instance.IsGameStarted) return;
+
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
         if (transform.position.x < destroyX)

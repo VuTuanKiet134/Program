@@ -16,8 +16,8 @@ public class BirdController : MonoBehaviour
 
     void Update()
     {
-        // Khi đã thua -> bấm Space để chơi lại
-        if (isDead && Input.GetKeyDown(KeyCode.Space))
+        // Nếu đã thua -> click chuột hoặc nhấn Space để chơi lại
+        if (isDead && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -25,14 +25,14 @@ public class BirdController : MonoBehaviour
         // Nếu chưa thua
         if (!isDead)
         {
-            // Nhấn space lần đầu tiên để bắt đầu game
-            if (!isGameStarted && Input.GetKeyDown(KeyCode.Space))
+            // Click hoặc Space lần đầu để bắt đầu game
+            if (!isGameStarted && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
             {
                 StartGame();
             }
 
-            // Bay lên khi game đã bắt đầu
-            if (isGameStarted && Input.GetKeyDown(KeyCode.Space))
+            // Click hoặc Space để bay lên
+            if (isGameStarted && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
             {
                 rb.velocity = Vector2.up * jumpForce;
             }

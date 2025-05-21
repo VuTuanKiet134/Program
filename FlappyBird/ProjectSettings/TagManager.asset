@@ -9,6 +9,18 @@ TagManager:
   - Ground
   - LevelTrigger
   - Up
+  - Projectile
+  - Bullet
+  - Enemy
+  - NoBomb
+  - Laser
+  - Delete
+  - PlayerCam
+  - SpawnMap2
+  - PassMap
+  - MainPlayer
+  - Day
+  - Night
   layers:
   - Default
   - TransparentFX

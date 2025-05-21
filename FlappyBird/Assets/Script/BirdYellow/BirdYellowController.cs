@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdYellowController : MonoBehaviour
 {
@@ -19,14 +20,16 @@ public class BirdYellowController : MonoBehaviour
     {
         if (isDead)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            // Click chuột hoặc nhấn Space để chơi lại
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             return;
         }
 
-        if (!isGameStarted && Input.GetKeyDown(KeyCode.Space))
+        // Bắt đầu game bằng chuột hoặc phím Space
+        if (!isGameStarted && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
         {
             StartGame();
         }
@@ -35,7 +38,8 @@ public class BirdYellowController : MonoBehaviour
         {
             float verticalSpeed = rb.velocity.y;
 
-            if (Input.GetKey(KeyCode.Space))
+            // Giữ chuột hoặc giữ phím Space để bay lên
+            if (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
             {
                 verticalSpeed = jumpForce;
             }
